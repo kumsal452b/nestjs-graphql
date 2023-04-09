@@ -1,0 +1,17 @@
+type League{
+    id:String!
+    name:String!
+    pokemons:[Pokemon!]
+}
+type Query{
+    leagues:[League!],
+    league(id:ID):League!
+}
+type Deleted{
+    isDeleted:Boolean!
+}
+type Mutation{
+    createLeague(name:String!,type:String!):League
+    updateLeague(id:ID!,name:String!,type:String!):League
+    deleteLeague(id:ID!):Deleted
+}
